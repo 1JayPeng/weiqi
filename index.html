@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8"> 
+	<title>简易的围棋</title> 
+	<link rel="stylesheet" href="static/weiqi.css">
+	<script src="static/vue.global.js"></script>
+	<script src="static/jquery-3.6.0.min.js"></script>
+	<script src="static/jquery.cookie.js"></script>
+	<script src="static/weiqi.var.js"></script>
+	<script src="static/weiqi.functions.js"></script>
+	<script src="static/weiqi.views.js"></script>
+	<script src="static/weiqi.main.js"></script>
+</head>
+<body>
+	<div id="divall">
+		<div id="qipan">
+			<div id="butvues">
+				<button :id="butvue.name" class="butvue" v-for="butvue in butvues">{{ butvue.name }}</button>
+				<select id="show">
+					<option :value ="show.name" v-for="show in shows">{{ show.name }}</option>
+				</select>
+				<select id="qizi">
+					<option :value ="qizi.name" v-for="qizi in qizis">{{ qizi.name }}</option>
+				</select>
+				计时: {{ counter }}
+			</div>
+			<div id="grids" class="grid-container">
+				<div :id="n" class="grid-item weiqizi" v-for="n in 361"></div>
+			</div>
+		</div>
+		<div id="qipu">
+		</div>
+		<div id="fenzu">
+			<div id="black">
+				<ol>
+				</ol>
+			</div>
+			<div id="white">
+				<ol>
+				</ol>
+			</div>
+		</div>
+	</div>
+	<div id="rightclicks">
+		<a :id="rightclick.name" class="rightclick" v-for="rightclick in rightclicks">{{ rightclick.name }}<br /></a>
+	</div>
+</body>
+<script src="static/weiqi.vue3.js"></script>
+<script type="text/javascript">
+	window.onload = function(){
+		var ul = document.getElementById("rightclicks");//获取ul节点对象
+		ul.style.display = "none";/*为document绑定鼠标右键菜单事件*/
+		document.oncontextmenu = function(e){
+			var _event = window.event||e;//事件对象
+			var x = _event.clientX;// 鼠标的x坐标
+			var y = _event.clientY;//鼠标的y坐标
+	  		ul.style.display = "block";
+			ul.style.left = x + "px";//改变ul的坐标
+			ul.style.top = y + "px";//阻止默认行为
+			if(_event.preventDefault){
+				_event.preventDefault(); //标准格式
+			}else{
+				_event.returnValue = false; //IE格式
+			}
+		}
+		document.onclick = function(){
+			ul.style.display = "none";
+		}
+	}
+</script>
+</html>
