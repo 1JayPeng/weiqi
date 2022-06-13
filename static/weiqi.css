@@ -1,0 +1,71 @@
+.grid-container {
+	background-image: url(weiqipan.png);
+	background-repeat: no-repeat;
+	display: grid;
+	grid-template-columns: 40px 40px 40px 40px 40px 40px 40px 40px 40px 40px 40px 40px 40px 40px 40px 40px 40px 40px 40px;
+	grid-template-rows: 40px 40px 40px 40px 40px 40px 40px 40px 40px 40px 40px 40px 40px 40px 40px 40px 40px 40px 40px;
+	padding: 20px;
+}
+.weiqizi {
+	/*background-image: url(../images/BD.png);*/
+	background-repeat: no-repeat, repeat;
+	text-align: center;
+	line-height: 30px;
+	color: #00FF00;
+	font-size: 20px;
+	font-weight: bold;
+	margin: 5px;
+}
+.butvue {
+	margin: 10px;
+}
+#divall {
+	width:800px;
+	border:2px solid #900;
+	padding:10px;
+	margin:auto;
+	overflow:hidden;
+}
+#qipan {
+	width:800px;
+	border:1px solid #060;
+}
+#qipu {
+	margin-top:10px;
+	padding:10px;
+	width:780px;
+	border:1px solid #060;
+	word-wrap: break-word;
+	word-break: normal;
+}
+#fenzu {
+	margin-top:10px;
+	width:800px;
+	word-wrap: break-word;
+	word-break: normal;
+}
+#fenzuwd {
+	float:left;
+	width:370px;
+	padding:10px;
+	border:1px solid #060;
+}
+#fenzubd {
+	float:right;
+	width:370px;
+	padding:10px;
+	border:1px solid #060;
+}
+#rightclicks {
+	position: absolute;
+	background-color: YellowGreen ;
+ 	padding:10px;
+	display: none;
+}
+#rightclicks a {
+	font-size: 25px;
+	line-height: 38px;
+}
+#rightclicks a:hover {
+	background-color:yellow;
+}
